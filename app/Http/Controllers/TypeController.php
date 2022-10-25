@@ -43,7 +43,7 @@ class TypeController extends Controller
     public function store(TypeRequest $request)
     {
         $type = new Type();
-        $typeCount = Type::all()->count();
+        $typeCount = Type::withTrashed()->count();
 
         $type->type_id = "TYP-" . str_pad($typeCount+1, 3, "0", STR_PAD_LEFT) . "-" . strtoupper(substr($request->name, 0, 3));
         $type->material_id = $request->material_id;

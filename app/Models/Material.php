@@ -14,6 +14,7 @@ class Material extends Model
     protected $table = 'materials';
     protected $guarded = [];
     protected $hidden;
+    protected $softDelete = true;
 
     // To get relational data from Type
     public function types() 

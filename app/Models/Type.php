@@ -14,9 +14,11 @@ class Type extends Model
     protected $table = 'types';
     protected $guarded = [];
     protected $hidden;
+    protected $softDelete = true;
 
     // To get data relational from Material
-    public function material() {
+    public function material() 
+    {
         return $this->belongsTo(Material::class);
     }
 }

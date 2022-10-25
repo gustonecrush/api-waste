@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Material;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class TypeResource extends JsonResource
@@ -15,9 +16,9 @@ class TypeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id" => $this->type_id,
-            "material_id" => $this->material_id,
-            "name" => $this->name,
+            'id' => $this->type_id,
+            'material' => MaterialResource::collection(Material::where('material_id', '=', $this->material_id)->get()),
+            'name' => $this->name,
         ];
     }
 }
