@@ -64,10 +64,12 @@ Response :
   "types": [
     {
       "id": "string",
-       "material": {
+       "material": [
+          {
             "material_id": "string",
             "name": "string",
-       },
+          },
+       ],
       "name": "string"
     },
   ]
@@ -100,13 +102,15 @@ Response :
   "code": "integer",
   "message": "string",
   "types": {
-    "id": "string",
-    "material": {
-        "material_id": "string",
-        "name": "string",
-    },
-    "name": "string"
-  }
+      "id": "string",
+       "material": [
+          {
+            "material_id": "string",
+            "name": "string",
+          },
+       ],
+      "name": "string"
+  },
 }
 ```
 
